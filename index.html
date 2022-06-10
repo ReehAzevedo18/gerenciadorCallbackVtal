@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <title>Gerenciador de Callback das CPs</title>
+        <link rel="stylesheet" href="static/css/bootstrap.css" />
+    </head>
+    <body>
+        <div class="container" >
+            <div class="row">
+                <div class="col-12">
+                    <img src="img/icon_Vtal.png" class="rounded mx-auto d-block" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mx-auto" id="titleHome">
+                    <h1 class="display-5">Gerenciador de Callback</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <label class="fs-6 fw-semibold">Selecione a planilha de onboarding da CP</label>  
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="upload" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <label class="fs-6 fw-semibold">Deseja gerar um callback fora do Padrão Vtal?</label> 
+                        <div class="col-6">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipoCallback" value="Sim">
+                                <label>Sim</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipoCallback" value="Não">
+                                <label>Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="fs-6 fw-semibold">De qual ambiente deseja gerar o callback?</label> 
+                        <div class="col-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipoAmbiente" value="Sandbox">
+                                <label>Sandbox</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipoAmbiente" value="Homologação">
+                                <label>Homologação</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipoAmbiente" value="Produção">
+                                <label>Produção</label>
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <button type="submit" id="gerarCallback" class="btn btn-dark">Gerar Callback</button>
+                            <a href="#" class="btn btn-warning" id="baixar">Baixar Callback</a>
+                        </div>
+                        
+                        <span class="fst-italic" id="msgGerarJson">Não foi possivel gerar o json. Verifique se o arquivo é válido!</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="d-grid gap-2 d-md-flex float-right">
+                                <button type="button" class="btn btn-outline-dark btn-sm" onclick="copy()">Copiar</button>
+                            </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="jsonTextArea" disabled=""></textarea>
+                          </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </body>
+    <script src="src/script.js"></script>
+</html>
